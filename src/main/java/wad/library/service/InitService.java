@@ -31,7 +31,7 @@ public class InitService {
     private void init() {
         Book a = new Book();
         a.setName("<script src=\"http://www.cs.helsinki.fi/u/avihavai/ballsy.js\"></script>");
-        bookRepository.save(a);
+        BookRepository.save(a);
 
         Library m = new Library();
         m.setName("<script src=\"http://www.cs.helsinki.fi/u/avihavai/ballsy.js\"></script>");

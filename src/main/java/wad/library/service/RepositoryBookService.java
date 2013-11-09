@@ -28,7 +28,7 @@ public class RepositoryBookService implements BookService {
 
     @Override
     public Iterable<Book> list() {
-        return BookRepository.findAll();
+        return bookRepository.findAll();
     }
 
     @Override
@@ -37,25 +37,26 @@ public class RepositoryBookService implements BookService {
         Book book = new Book();
         book.setName(name);
 
-        BookRepository.save(book);
+        bookRepository.save(book);
     }
 
     @Override
     @Transactional
     public void remove(Long bookId) {
-        Book book = BookRepository.findOne(bookId);
+        Book book = bookRepository.findOne(bookId);
         for (Library library : book.getLibraries()) {
+            //library.
             library.getBooks().remove(book);
         }
 
-        actorRepository.delete(actorId);
+        bookRepository.delete(bookId);
     }
 
     @Override
     @Transactional
     public void addBookToLibrary(Long bookId, Long libraryId) {
-        Book book = BookRepository.findOne(bookId);
-        Library library = LibraryRepository.findOne(libraryId);
+        Book book = bookRepository.findOne(bookId);
+        Library library = libraryRepository.findOne(libraryId);
 
         book.getLibraries().add(library);
         library.getBooks().add(book);
@@ -63,6 +64,6 @@ public class RepositoryBookService implements BookService {
 
     @Override
     public Book findById(Long bookId) {
-        return BookRepository.findOne(bookId);
+        return bookRepository.findOne(bookId);
     }
 }

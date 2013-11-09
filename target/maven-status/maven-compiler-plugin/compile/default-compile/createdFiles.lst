@@ -1,1 +1,11 @@
-wad/template/controller/DefaultController.class
+wad\template\controller\DefaultController.class
+wad\library\service\LibraryService.class
+wad\library\repository\BookRepository.class
+wad\library\controller\BookController.class
+wad\library\domain\Library.class
+wad\library\domain\Book.class
+wad\library\service\InitService.class
+wad\library\service\RepositoryBookService.class
+wad\library\service\BookService.class
+wad\library\controller\LibraryController.class
+wad\library\repository\LibraryRepository.class

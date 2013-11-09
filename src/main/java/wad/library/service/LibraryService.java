@@ -14,7 +14,7 @@ import wad.library.domain.Library;
 
 public interface LibraryService {
     Iterable<Library> list();
-    //void add(String name, int lengthInMinutes); lenght ??
+    void add(String name, int lengthInMinutes);// lenght ??
     void remove(Long libraryId);
     Iterable<Library> listLibrariesWithout(Long bookId);
 }

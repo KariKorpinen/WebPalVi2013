@@ -44,18 +44,18 @@ public class RepositoryLibraryService implements LibraryService {
     @Override
     @Transactional
     public void remove(Long libraryId) {
-        Library library = LibraryRepository.findOne(libraryId);
+        Library library = libraryRepository.findOne(libraryId);
         for (Book book : library.getBooks()) {
             book.getLibraries().remove(library);
         }
 
-        LibraryRepository.delete(library);
+        libraryRepository.delete(library);
     }
 
     @Override
     @Transactional(readOnly = true)
     public Iterable<Library> listLibrariesWithout(Long bookId) {
-        Book book = BookRepository.findOne(bookId);
-        return LibraryRepository.findLibrariesWithoutBook(book);
+        Book book = bookRepository.findOne(bookId);
+        return libraryRepository.findLibrariesWithoutBook(book);
     }
 }
