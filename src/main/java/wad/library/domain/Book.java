@@ -48,7 +48,7 @@ public class Book implements Serializable {
         return libraries;
     }
 
-    public void setMovies(List<Library> movies) {
+    public void setLibraries(List<Library> libraries) {
         this.libraries = libraries;
     }
 }

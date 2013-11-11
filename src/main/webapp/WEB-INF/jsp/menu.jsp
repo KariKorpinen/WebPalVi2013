@@ -7,6 +7,8 @@
     </head>
     <body>
         <h1>Le HT</h1>
+         <a href="${pageContext.request.contextPath}/app/books">Book management</a><br/>
+        <a href="${pageContext.request.contextPath}/app/libraries">Library management</a><br/>
 
         <p>Good luck!</p>
     </body>

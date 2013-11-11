@@ -30,11 +30,15 @@ public class InitService {
     @PostConstruct
     private void init() {
         Book a = new Book();
-        a.setName("<script src=\"http://www.cs.helsinki.fi/u/avihavai/ballsy.js\"></script>");
+        
+       // a.setName("<script src=\"http://www.cs.helsinki.fi/u/avihavai/ballsy.js\"></script>");
+        a.setName("Testikirja 1");
         BookRepository.save(a);
 
         Library m = new Library();
-        m.setName("<script src=\"http://www.cs.helsinki.fi/u/avihavai/ballsy.js\"></script>");
+        
+        //m.setName("<script src=\"http://www.cs.helsinki.fi/u/avihavai/ballsy.js\"></script>");
+        m.setName("Testikirjasto 1");
         LibraryRepository.save(m);
     }
 }
